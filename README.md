@@ -1,87 +1,86 @@
 # KiCad Library for WeAct Studio Black Pill STM32F411CEU6 V3.0 / V3.1
 
-[![KiCad](https://img.shields.io/badge/KiCad-10.0.7-314CB0?logo=kicad&logoColor=white)](https://www.kicad.org/)
-[![Validation](https://img.shields.io/badge/status-validated-2ea44f)](docs/VALIDATION.md)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+KiCad symbol, through-hole footprint, official 3D model, and a small validation project for the complete **WeAct Studio MiniF4 / Black Pill STM32F411CEU6 module**.
 
-Reusable KiCad symbol, through-hole footprint, and validation project for the complete **WeAct Studio MiniF4 / Black Pill module with STM32F411CEU6**. This library models the COTS board, not the bare STM32 microcontroller.
+This library was built by **ASTRA TEAM** for an STM32F411-based CanSat flight computer. It represents the development board as a COTS module; it is not a symbol for the bare STM32F411 MCU.
 
-Developed and maintained by **ASTRA TEAM** for the ASTRA CanSat avionics program.
-
-Keywords: WeAct Studio Black Pill, MiniF4, STM32F411CEU6, KiCad symbol library, KiCad footprint, STM32 development board, USB-C, SWD, V3.0, V3.1.
-
-![Validated WeAct Black Pill STM32F411CEU6 KiCad 3D model](validation/BlackPill_validation_3D_iso.png)
+![WeAct Black Pill STM32F411CEU6 in KiCad 3D Viewer](validation/BlackPill_validation_3D_iso.png)
 
 ## Download
 
 **[Download the complete library as a ZIP](https://github.com/edulandoni/WeAct-BlackPill-STM32F411CEU6-KiCad-Library/archive/refs/heads/main.zip)**
 
-The ZIP already includes the KiCad symbol, footprint, validation project, documentation, screenshots, and official STEP model. No separate model download is required.
+The ZIP contains everything required, including the STEP model. Extract it to a permanent folder before adding the libraries to KiCad.
 
-1. Click the download link above.
-2. Extract the ZIP to a permanent folder.
-3. Keep the extracted files together so KiCad can find the included 3D model.
+## What is included
 
-## Validation status
+| Item | Path |
+|---|---|
+| Symbol library | `WeAct_BlackPill_STM32F411CEU6.kicad_sym` |
+| Footprint library | `WeAct_BlackPill_STM32F411CEU6.pretty/` |
+| Official WeAct V3.1 STEP model | `3dmodels/WeAct_MiniF4x1Cx_V31.step` |
+| Minimal KiCad test project | `validation/BlackPill_validation.kicad_pro` |
+| Pin and geometry audit | `validation/pinout_and_geometry.csv` |
+| ERC and DRC reports | `validation/erc.json`, `validation/drc.json` |
 
-**VALIDATED — revision 1.1 — 2026-10-12 — KiCad 10.0.7**
+## Installation
 
-The library was checked against WeAct Studio's official repository at commit [`05380f5`](https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1/tree/05380f5c41f38eea8966a81c5acdeb7512cd909f):
+1. Extract the downloaded ZIP.
+2. In KiCad, open **Preferences → Manage Symbol Libraries**, select **Add existing library to table**, and choose `WeAct_BlackPill_STM32F411CEU6.kicad_sym`.
+3. Use the nickname `WeAct_BlackPill_STM32F411CEU6`.
+4. Open **Preferences → Manage Footprint Libraries**, select **Add existing library to table**, and choose the `WeAct_BlackPill_STM32F411CEU6.pretty` folder.
+5. Use the same nickname: `WeAct_BlackPill_STM32F411CEU6`.
+6. Open **Preferences → Configure Paths** and add:
 
-- all 44 symbol pins match the official P1, P2, and SWD P3 connectors;
-- all 44 footprint pad centers match the official V3.1 STEP hole centers within 0.001 mm (maximum observed error: 0.000566 mm);
-- 2.54 mm pitch and 15.2146 mm row spacing were verified;
-- the 52.81 × 20.78 mm nominal board outline and USB-C orientation were verified;
-- Pin 1 is the only rectangular pad and is marked on `F.SilkS` and `F.Fab`;
-- the validation project reports zero ERC violations, zero DRC violations, zero unconnected items, and zero schematic/PCB parity errors.
+   ```text
+   Name:  WEACT_BLACKPILL_KICAD_LIB
+   Path:  absolute path to the extracted library folder
+   ```
 
-See [docs/VALIDATION.md](docs/VALIDATION.md) for the complete technical review and [validation/pinout_and_geometry.csv](validation/pinout_and_geometry.csv) for the 44-contact traceability matrix.
-
-## Contents
-
-```text
-WeAct_BlackPill_STM32F411CEU6.kicad_sym     KiCad symbol library
-WeAct_BlackPill_STM32F411CEU6.pretty/       KiCad footprint library
-3dmodels/                                   Included official STEP model
-docs/                                       Validation record, sources, and change log
-validation/                                 Minimal schematic/PCB project and evidence
-```
-
-## Install the libraries
-
-1. In KiCad, open **Preferences → Manage Symbol Libraries** and add `WeAct_BlackPill_STM32F411CEU6.kicad_sym` with the nickname `WeAct_BlackPill_STM32F411CEU6`.
-2. Open **Preferences → Manage Footprint Libraries** and add `WeAct_BlackPill_STM32F411CEU6.pretty` with the same nickname.
-3. In **Preferences → Configure Paths**, define `WEACT_BLACKPILL_KICAD_LIB` as the absolute path to the extracted repository directory.
-
-The symbol already references the supplied footprint. The footprint expects:
+The footprint resolves its model from:
 
 ```text
 ${WEACT_BLACKPILL_KICAD_LIB}/3dmodels/WeAct_MiniF4x1Cx_V31.step
 ```
 
-## Open the validation project
+To check the installation, open `validation/BlackPill_validation.kicad_pro`, open the PCB, and press `Alt+3`. The USB-C connector should be on the left in the 3D Viewer.
 
-Open `validation/BlackPill_validation.kicad_pro`, open the PCB, and press `Alt+3`. The module should appear with USB-C on the left and all 44 holes aligned with the pads. The validation PCB uses a project-relative model path, so it does not require the KiCad path variable.
+## Validation
 
-Reference images are included in `validation/BlackPill_validation_3D_top.png` and `validation/BlackPill_validation_3D_iso.png`.
+Baseline: **revision 1.1, 2026-10-12, KiCad 10.0.7**.
 
-## Supported hardware and limitations
+| Check | Result |
+|---|---:|
+| Symbol pins checked against WeAct P1/P2/P3 | 44 / 44 |
+| Pad numbers present and unique | 1–44 |
+| Header pitch | 2.54 mm |
+| Footprint row spacing | 15.2146 mm |
+| Maximum pad-to-STEP hole-center error | 0.000566 mm |
+| Acceptance threshold | 0.001 mm |
+| Nominal board outline | 52.81 × 20.78 mm |
+| ERC violations | 0 |
+| DRC violations | 0 |
+| Unconnected items | 0 |
+| Schematic/PCB parity issues | 0 |
 
-- Supported: original WeAct Studio MiniF4/Black Pill boards with STM32F411CEU6, revisions V3.0 and V3.1.
-- The official STEP represents V3.1. V3.0 shares the documented interface geometry and pinout, but its component placement and cosmetic details are not certified by the V3.1 model.
-- Clones and other board revisions are not covered.
-- Header/socket height, carrier-board clearance, and USB-cable envelope remain integration-level TBDs. The STEP does not include installed headers.
-- `FLASH_*`, USB, LED, button, LSE, and BOOT1 labels describe onboard shared connections; they do not remove the associated electrical loading.
-- The validation project verifies library consistency, not a flight-ready electrical design.
+The source baseline is WeActStudio/WeActStudio.MiniSTM32F4x1 commit [`05380f5`](https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1/tree/05380f5c41f38eea8966a81c5acdeb7512cd909f). The full review is in [docs/VALIDATION.md](docs/VALIDATION.md); the complete pin mapping is in [validation/pinout_and_geometry.csv](validation/pinout_and_geometry.csv).
 
-## Official files and licensing
+Pin 1 is PB12. It is the only rectangular pad and has explicit markers on both `F.SilkS` and `F.Fab`. Pads 41–44 are the SWD header: 3V3, SWDIO, SWCLK, and GND.
 
-The included STEP is the unmodified official WeAct Studio V3.1 model. WeAct Studio confirmed to ASTRA TEAM by email that the model may be published and redistributed. Its source commit and SHA-256 are recorded in [docs/OFFICIAL_SOURCES.md](docs/OFFICIAL_SOURCES.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+## Hardware coverage
 
-Official PDFs, the Altium library, and pinout artwork remain linked to their authoritative upstream locations rather than duplicated here.
+The library targets original WeAct Studio MiniF4 / Black Pill boards fitted with the STM32F411CEU6:
 
-The KiCad symbol, footprint, validation project, scripts, and ASTRA TEAM documentation in this repository are licensed under the [MIT License](LICENSE). WeAct Studio names, documentation, CAD models, artwork, and hardware designs remain the property of their respective owners. This project is independent and is not affiliated with or endorsed by WeAct Studio.
+- V3.1 is checked directly against the official schematic, mechanical drawing, and STEP model.
+- V3.0 uses the same documented external dimensions and pin definitions.
+- Clones and other revisions are outside the validated configuration.
 
-## Contributing
+The V3.1 STEP does not contain installed headers. Header height, socket selection, carrier-PCB clearance, and USB-cable clearance must therefore be checked in the final assembly. Pins shared with USB, onboard flash, LED, user button, BOOT1, and the LSE crystal retain those onboard loads.
 
-Do not change pad or pin numbering silently. Any change must identify the discrepancy, cite the official source and revision, update the traceability matrix, and regenerate the ERC/DRC evidence.
+## Source and licensing
+
+The STEP file is the unmodified model published by WeAct Studio. WeAct Studio confirmed to ASTRA TEAM by email that it may be redistributed. The pinned source, file hash, and attribution are recorded in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+ASTRA TEAM's KiCad files, validation material, and documentation are released under the [MIT License](LICENSE). The WeAct model remains attributed to WeAct Studio and is not covered by that MIT grant.
+
+If a future board revision changes the pinout or geometry, open an issue with a link to the official source. Pad or pin numbers should never be changed without updating the traceability matrix and rerunning the checks.
