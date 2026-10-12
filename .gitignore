@@ -31,11 +31,7 @@ Thumbs.db
 *.swp
 *~
 
-# Official WeAct files retained locally for validation only.
-# The upstream repository does not declare a repository-wide license,
-# so these files are not redistributed here.
-3dmodels/*.step
-3dmodels/*.stp
+# Official reference documents retained locally for validation only.
 validation/official_sources/
 
 # Python cache produced by the validation utility

@@ -11,7 +11,7 @@ The following files were used during validation:
 - [Hardware README](https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1/blob/05380f5c41f38eea8966a81c5acdeb7512cd909f/Hardware/README.md)
 - [Official repository README and pinout](https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1/blob/05380f5c41f38eea8966a81c5acdeb7512cd909f/README.md)
 
-The upstream repository had no repository-wide `LICENSE` file when checked on 2026-10-12. Consequently, source files are linked rather than copied into this public repository.
+The upstream repository had no repository-wide `LICENSE` file when checked on 2026-10-12. WeAct Studio separately confirmed to ASTRA TEAM by email that the official STEP model may be published and redistributed. The STEP is therefore included unmodified; the remaining official reference files are linked to their authoritative upstream locations.
 
 Expected SHA-256 of the official STEP bytes used for validation:
 

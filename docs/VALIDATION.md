@@ -6,7 +6,7 @@ Date: 2026-10-12. Configuration revision: 1.1.
 
 This review covers the complete WeAct MiniF4 module fitted with the STM32F411CEU6, not the bare UFQFPN48 MCU. The official source baseline is WeActStudio/WeActStudio.MiniSTM32F4x1 commit `05380f5c41f38eea8966a81c5acdeb7512cd909f`.
 
-Local copies of the official schematic, mechanical drawing, pinout image, STEP, and release notes are retained under `validation/official_sources/` and `3dmodels/` for audit purposes, but are ignored by Git because the upstream repository does not declare a general redistribution license. The public CSV traceability matrix identifies every library pad against connector P1, P2, or P3 on page 1 of the official schematic.
+The official STEP is included unmodified under `3dmodels/` with permission communicated by WeAct Studio to ASTRA TEAM by email. Local copies of the official schematic, mechanical drawing, pinout image, and release notes are retained under `validation/official_sources/` for audit purposes and remain ignored by Git. The public CSV traceability matrix identifies every library pad against connector P1, P2, or P3 on page 1 of the official schematic.
 
 ## Mechanical geometry and coordinate transformation
 
