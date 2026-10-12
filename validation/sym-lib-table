@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "WeAct_BlackPill_STM32F411CEU6")(type "KiCad")(uri "${KIPRJMOD}/../WeAct_BlackPill_STM32F411CEU6.kicad_sym")(options "")(descr "WeAct Black Pill STM32F411CEU6 V3.x symbols by ASTRA TEAM"))
+)

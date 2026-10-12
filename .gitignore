@@ -1,0 +1,43 @@
+# KiCad local state, caches, backups, and autosaves
+*-backups/
+*.bak
+*.bck
+*.kicad_prl
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.kicad_pro-bak
+*.kicad_sym-bak
+*.kicad_mod-bak
+*.lck
+~$*
+_autosave-*
+
+# Generated outputs
+*.gbr
+*.gbrjob
+*.drl
+*.pos
+*.rpt
+*.zip
+*.net
+*.ses
+*.cmp
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Official WeAct files retained locally for validation only.
+# The upstream repository does not declare a repository-wide license,
+# so these files are not redistributed here.
+3dmodels/*.step
+3dmodels/*.stp
+validation/official_sources/
+
+# Python cache produced by the validation utility
+__pycache__/
+*.py[cod]

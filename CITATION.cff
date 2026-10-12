@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this KiCad library, please cite this repository."
+title: "KiCad Library for WeAct Studio Black Pill STM32F411CEU6 V3.0 / V3.1"
+type: software
+authors:
+  - family-names: "ASTRA TEAM"
+version: "1.1"
+date-released: 2026-10-12
+repository-code: "https://github.com/edulandoni/WeAct-BlackPill-STM32F411CEU6-KiCad-Library"
+license: MIT
+keywords:
+  - KiCad
+  - WeAct Studio
+  - Black Pill
+  - STM32F411CEU6
+  - STM32
+  - footprint
+  - symbol

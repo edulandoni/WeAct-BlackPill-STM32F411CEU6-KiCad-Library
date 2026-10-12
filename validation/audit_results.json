@@ -1,0 +1,14 @@
+{
+  "pins": 44,
+  "pinout_mismatches": 0,
+  "maximum_center_error_mm": 0.0005656854249498038,
+  "acceptance_mm": 0.001,
+  "minimum_copper_gap_mm": 0.8399999999999992,
+  "annular_ring_normal_mm": 0.4,
+  "annular_ring_pad41_mm": 0.3,
+  "square_pads": [
+    1
+  ],
+  "numbering_changes": 0,
+  "STEP_sha256": "e713074f681a8ee3d1c54ae5419c8165c01b16e5abb54afae9252521651cb594"
+}
